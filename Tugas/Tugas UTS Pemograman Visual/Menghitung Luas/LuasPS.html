@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luas Prisma Segitiga</title>
+    <link rel="stylesheet" href="style1.css">
+    <script language="javascript">
+        function LuasPS() {
+            A = eval(document.myForm.value1.value);
+            T = eval(document.myForm.value2.value);
+            TP = eval(document.myForm.value3.value);
+            alert("Hasil Dari Luas Prisma Segitiga adalah " + " = " + ((2 * (0.5 * A * T)) + (3 * (TP * A))) +
+                " cm2");
+        }
+        const electron = require("electron");
+
+        const {
+            ipcRenderer
+        } = electron;
+        ipcRenderer.send("appointment:request:LuasPS");
+
+        const done = id => {
+            ipcRenderer.send("appointment:done", id);
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Luas Prisma Segitiga</h1>
+    <form name="myForm" method="post" onsubmit="LuasPS();">
+        <input type="inputbox" placeholder="Alas" name="value1">
+        <input type="inputbox" placeholder="Tinggi" name="value2">
+        <input type="inputbox" placeholder="Tinggi Prisma" name="value3">
+        <br><br>
+        <input type="submit" value="Luas Prisma Segitiga">
+    </form>
+    <footer>
+        <p>Copyright© 2020 Destrawan Companies Inc. All right reserved</p>
+    </footer>
+</body>
+
+</html>

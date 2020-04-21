@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luas Kerucut</title>
+    <link rel="stylesheet" href="style1.css">
+    <script language="javascript">
+        function LuasKer() {
+            R = eval(document.myForm.value1.value);
+            S = eval(document.myForm.value2.value);
+            alert("Hasil dari Luas Kerucut adalah " + " = " + 3.14 * R * (R + S));
+        }
+        const electron = require("electron");
+
+        const {
+            ipcRenderer
+        } = electron;
+        ipcRenderer.send("appointment:request:LuasKer");
+
+        const done = id => {
+            ipcRenderer.send("appointment:done", id);
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Luas Kerucut</h1>
+    <form name="myForm" method="post" onsubmit="LuasKer();">
+        <input type="inputbox" placeholder="Jari - Jari" name="value1">
+        <input type="inputbox" placeholder="Panjang Garis Pelukis" name="value2">
+        <input type="submit" value="Luas Kerucut">
+    </form>
+    <footer>
+        <p>Copyright© 2020 Destrawan Companies Inc. All right reserved</p>
+    </footer>
+</body>
+
+</html>

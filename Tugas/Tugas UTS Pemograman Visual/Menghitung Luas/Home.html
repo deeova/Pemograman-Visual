@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Destrawan.Website</title>
+    <script>
+        function LuasJG() {
+            window.open('LuasJG.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+
+        function KelilingJG() {
+            window.open('KelilingJG.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+
+        function LuasKer() {
+            window.open('LuasKer.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+
+        function LuasKub() {
+            window.open('LuasKub.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+
+        function LuasPS() {
+            window.open('LuasPS.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+
+        function LuasTab() {
+            window.open('LuasTab.html', 'jav', 'width=600,height=400,resizeble=yes');
+        }
+        const electron = require("electron");
+
+        const {
+            ipcRenderer
+        } = electron;
+        ipcRenderer.send("appointment:request:Home");
+
+        const done = id => {
+            ipcRenderer.send("appointment:done", id);
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Selamat Datang Di Website Perhitungan </h1>
+        <h1>Luas & Keliling Bangunan Datar</h1>
+        <p>
+            <button><a href="javascript:LuasJG();">Luas Jajar Genjang</a></button>
+            <button><a href="javascript:KelilingJG();">Keliling Jajar Genjang</a></button>
+            <button><a href="javascript:LuasPS();">Luas Prisma Segitiga</a></button>
+            <br><br>
+            <button><a href="javascript:LuasKer();">Luas Kerucut</a></button>
+            <button><a href="javascript:LuasKub();">Luas Kubus</a></button>
+            <button><a href="javascript:LuasTab();">Luas Tabung</a></button>
+        </p>
+    </div>
+    <footer>
+        <p>Copyright© 2020 Destrawan Companies Inc. All right reserved</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luas Kubus</title>
+    <link rel="stylesheet" href="style1.css">
+    <script language="javascript">
+        function LuasKub() {
+            S = eval(document.myForm.value1.value);
+            alert("Hasil Dari Luas Kubus Adalah " + " = " + 6 * (S * S) + " cm2");
+        }
+        const electron = require("electron");
+
+        const {
+            ipcRenderer
+        } = electron;
+        ipcRenderer.send("appointment:request:LuasKub");
+
+        const done = id => {
+            ipcRenderer.send("appointment:done", id);
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Luas Kubus</h1>
+    <form name="myForm" method="post" onsubmit="LuasKub();">
+        <input type="inputbox" placeholder="Sisi" name="value1">
+        <input type="submit" value="Luas Kubus">
+    </form>
+    <footer>
+        <p>Copyright© 2020 Destrawan Companies Inc. All right reserved</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+body {
+    background-image: url(2412438.jpg);
+    background-size: 600px 400px;
+    text-align: center;
+    font-family: monospace;
+    color: black;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
