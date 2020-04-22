@@ -76,7 +76,7 @@ const aboutWindowCreator = () => {
     });
 
     aboutWindow.setMenu(null);
-    aboutWindow.loadURL(`file://${__dirname}/agus.html`);
+    aboutWindow.loadURL(`file://${__dirname}/about.html`);
     aboutWindow.on("closed", () => (caboutWindow = null));
 };
 
