@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+  <title>HEAVY MerchShop</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script>
+  const electron = require("electron");
+  const {
+    ipcRenderer
+  } = electron;
+  ipcRenderer.send("appointment:request:main");
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', function () {
+    nav.classList.toggle('slide');
+  });
+
+  function myFunction() {
+    document.getElementById("product");
+  }
+</script>
+
+</html>
